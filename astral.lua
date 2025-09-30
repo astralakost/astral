@@ -23,8 +23,6 @@ function punch(x, y)
   })
 end
 
-punch(targetX, targetY)
-
 while true do
     local player = GetLocal()
     local x = math.floor(player.posX / 32)
@@ -39,6 +37,7 @@ while true do
     for _, targetX in ipairs(positions) do
         -- Tanam item
         placeItem(itemID, targetX, targetY)
+        punch(targetX, targetY)
         sleep(delay)
     end
 
